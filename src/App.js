@@ -1,19 +1,15 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import Counter from './Counter';
-import { userActions } from './store/User';
+import AddTodoForm from './AddTodoForm';
+import TodoItems from './TodoItmes';
+import TotalItems from './TotalItems';
 
 function App() {
-  const user = useSelector((state) => state.user.name);
-  console.log(user);
-  const dispatch = useDispatch();
-  const one = () => {
-    dispatch(userActions.addUser());
-  }
   return (
-    <div className="App">
-      <h1 onClick={one}>Hello Redux {user}</h1>
-      <Counter />
+    <div className="App container bg-white p-4 mt-5">
+      <h1>My Todo List</h1>
+      <AddTodoForm />
+      <TodoItems />
+      <TotalItems />
     </div>
   );
 }
